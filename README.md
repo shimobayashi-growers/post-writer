@@ -61,3 +61,20 @@ npx shadcn@latest add
 
 https://lucide.dev/
 https://iconbuddy.com/
+
+# auth
+
+https://next-auth.js.org/
+
+```
+npm install next-auth
+```
+
+↓ 　サービス変更
+https://authjs.dev/
+
+```
+npm install next-auth@beta
+```
+
+- 今回は安定している v4（前のもの）を利用
