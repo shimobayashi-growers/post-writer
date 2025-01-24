@@ -46,3 +46,13 @@ https://usehooks.com/uselockbodyscroll
 ```
 npm i @uidotdev/usehooks
 ```
+
+# shadcn@latest の追加
+
+```
+npx shadcn@latest add
+```
+
+- input
+- label
+- toast
