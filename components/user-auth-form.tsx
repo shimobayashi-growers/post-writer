@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { buttonVariants } from "./ui/button";
+import { Icon } from "./icon";
 
 
 export default function UserAuthForm() {
@@ -33,6 +34,7 @@ export default function UserAuthForm() {
             </div>
 
             <button className={cn(buttonVariants({ variant: "outline" }))}>
+                <Icon.github className="mr-2"></Icon.github>
                 Github
             </button>
         </div>

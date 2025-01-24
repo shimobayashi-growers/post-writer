@@ -56,3 +56,8 @@ npx shadcn@latest add
 - input
 - label
 - toast
+
+# icon
+
+https://lucide.dev/
+https://iconbuddy.com/
