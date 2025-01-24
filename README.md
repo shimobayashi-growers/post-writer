@@ -91,3 +91,11 @@ https://github.com/settings/developers
 - 作成して出てきた情報を.env ファイルに記載する
   - Client ID -> GITHUB_CLIENT_ID
   - Client secrets -> GITHUB_CLIENT_SECRET
+
+# NEXTAUTH_SECRET
+
+- ランダムな key の発行
+
+```
+openssl rand -base64 32
+```
