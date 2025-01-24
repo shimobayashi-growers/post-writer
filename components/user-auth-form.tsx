@@ -12,7 +12,7 @@ import { useState } from "react";
 export default function UserAuthForm() {
 
     const [isGithubLoading, setIsGithubLoading] = useState<boolean>(false);
-
+    const [isGoogleLoading, setIsGoogleLoading] = useState<boolean>(false);
     return (
         <div className="grid gap-6">
             <form>
@@ -40,16 +40,28 @@ export default function UserAuthForm() {
                 </div>
             </div>
 
-            <button
-                className={cn(buttonVariants({ variant: "outline" }))}
-                onClick={() => {
-                    setIsGithubLoading(true);
-                    signIn("github")
-                }}
-            >
-                {isGithubLoading ? <Icon.spinner className="mr-2 animate-spin"></Icon.spinner> : <Icon.github className="mr-2"></Icon.github>}
-                Github
-            </button>
+            <div className="flex flex-col gap-3">
+                <button
+                    className={cn(buttonVariants({ variant: "outline" }))}
+                    onClick={() => {
+                        setIsGithubLoading(true);
+                        signIn("github")
+                    }}
+                >
+                    {isGithubLoading ? <Icon.spinner className="mr-2 animate-spin"></Icon.spinner> : <Icon.github className="mr-2"></Icon.github>}
+                    Github
+                </button>
+                <button
+                    className={cn(buttonVariants({ variant: "outline" }))}
+                    onClick={() => {
+                        setIsGithubLoading(true);
+                        signIn("google")
+                    }}
+                >
+                    {isGoogleLoading ? <Icon.spinner className="mr-2 animate-spin"></Icon.spinner> : <Icon.google className="mr-2"></Icon.google>}
+                    Google
+                </button>
+            </div>
         </div>
     )
 }

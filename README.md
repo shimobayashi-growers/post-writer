@@ -99,3 +99,20 @@ https://github.com/settings/developers
 ```
 openssl rand -base64 32
 ```
+
+# Google ログイン
+
+https://developers.google.com/identity/protocols/oauth2?hl=ja
+↓
+https://console.cloud.google.com/apis/dashboard?hl=ja&inv=1&invt=Abnr3Q&project=bayashimo-jp
+
+- post-writer でプロジェクトを新規作成
+- API とサービス -> 認証情報 -> OAuth クライアント ID の作成
+  - https://console.cloud.google.com/apis/credentials?hl=ja&inv=1&invt=Abnr3Q&project=post-writer-448807
+- 認証画面をまずは作成、外部を選択。ほかは適当に
+- もう一度「OAuth クライアント ID の作成」を選択、post-writer の名前
+- 承認済みのリダイレクト URI
+  - http://localhost:3000/api/auth/callback/google
+- 作成して出てきた情報を.env ファイルに記載する
+  - Client ID -> GOOGLE_CLIENT_ID
+  - Client secrets -> GOOGLE_CLIENT_SECRET
