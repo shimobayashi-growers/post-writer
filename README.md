@@ -78,3 +78,16 @@ npm install next-auth@beta
 ```
 
 - 今回は安定している v4（前のもの）を利用
+
+# Github ログイン
+
+https://github.com/settings/developers
+
+- 「Oauth Apps」から新規作成
+  - post-writer
+  - http://localhost:3000/
+  - http://localhost:3000/api/auth/callback/github
+    - https://next-auth.js.org/configuration/providers/oauth
+- 作成して出てきた情報を.env ファイルに記載する
+  - Client ID -> GITHUB_CLIENT_ID
+  - Client secrets -> GITHUB_CLIENT_SECRET
