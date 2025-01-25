@@ -125,3 +125,9 @@ https://next-auth.js.org/v3/adapters/prisma
 npm install @prisma/client @next-auth/prisma-adapter
 npm install prisma --save-dev
 ```
+
+prisma の初期化
+
+```
+npx prisma init
+```
