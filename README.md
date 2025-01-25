@@ -116,3 +116,12 @@ https://console.cloud.google.com/apis/dashboard?hl=ja&inv=1&invt=Abnr3Q&project=
 - 作成して出てきた情報を.env ファイルに記載する
   - Client ID -> GOOGLE_CLIENT_ID
   - Client secrets -> GOOGLE_CLIENT_SECRET
+
+# NextAuth.js <-> Prisma
+
+https://next-auth.js.org/v3/adapters/prisma
+
+```
+npm install @prisma/client @next-auth/prisma-adapter
+npm install prisma --save-dev
+```
