@@ -136,3 +136,15 @@ npx prisma init
   - https://zenn.dev/arsaga/articles/3f5bce7c904ebe
 
 ![image](https://storage.googleapis.com/zenn-user-upload/7bb366c0e368-20230531.png)
+
+# migrate
+
+https://next-auth.js.org/v3/adapters/prisma
+
+```
+npx prisma generate
+npx prisma migrate dev
+```
+
+supabase にテーブルが作成されて、ログインしてデータが入ったら成功
+修正したら migrate をして再度 DB を更新する
