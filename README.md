@@ -131,3 +131,8 @@ prisma の初期化
 ```
 npx prisma init
 ```
+
+- ER 図
+  - https://zenn.dev/arsaga/articles/3f5bce7c904ebe
+
+![image](https://storage.googleapis.com/zenn-user-upload/7bb366c0e368-20230531.png)
