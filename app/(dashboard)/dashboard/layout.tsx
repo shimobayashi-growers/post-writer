@@ -8,12 +8,16 @@ export default function DashboardLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div>
-            <header>
-                <div>
+        <div className="flex flex-col min-h-screen space-y-6">
+            <header className="sticky top-0 z-40 border-b bg-background">
+                <div className="container flex h-16 items-center justify-between py-4">
                     <MainNav items={dashboardConfig.mainNav}/>
                 </div>
             </header>
+            <div className="container grid flex-1 gap-12 md:grid-cols-[200px_1fr]">
+                <aside className="hidden md:flex w-[200px] fle-col">Sidebar</aside>
+                <main className="flex flex-col w-full flex-1 overflow-hidden">{children}</main>
+            </div>
             <SiteFooter />
         </div>
     );
