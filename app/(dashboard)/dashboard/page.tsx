@@ -30,8 +30,6 @@ export default async function DashBoardPage() {
         },
     });
 
-    console.log(posts);
-
     return (
         <DashBoardShell>
             <DashBoardHeader heading="記事投稿" text="記事の投稿と管理">
