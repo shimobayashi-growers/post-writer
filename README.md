@@ -152,3 +152,11 @@ npx prisma migrate dev
 
 supabase にテーブルが作成されて、ログインしてデータが入ったら成功
 修正したら migrate をして再度 DB を更新する
+
+# post
+
+日付を整形する format 関数
+
+```
+npm install date-fns
+```
