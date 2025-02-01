@@ -5,6 +5,7 @@ import { ButtonProps, buttonVariants } from "./ui/button";
 import { useState } from "react";
 import { Icon } from "./icon";
 import { useRouter } from "next/navigation";
+import { toast } from "@/hooks/use-toast";
 
 interface PostCreateButtonProps extends ButtonProps {}
 
@@ -32,7 +33,11 @@ export default function PostCreateButton({
         console.log(response);
 
         if (!response.ok) {
-            throw new Error("Failed to create post");
+            return toast({
+                title: "エラー",
+                description: "投稿の作成に失敗しました",
+                variant: "destructive",
+            });
         }
 
         const post = await response.json();

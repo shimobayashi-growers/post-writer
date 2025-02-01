@@ -37,11 +37,17 @@ export default async function DashBoardPage() {
                 </PostCreateButton>
             </DashBoardHeader>
             <div>
-                <div className="divide-y border rounded-md">
-                    {posts.map((post) => (
-                        <PostItem key={post.id} post={post}></PostItem>
-                    ))}
+                {posts.length ? (
+                    <div className="divide-y border rounded-md">
+                        {posts.map((post) => (
+                            <PostItem key={post.id} post={post}></PostItem>
+                        ))}
                 </div>
+                ) : (
+                    <div className="ml-2">
+                        投稿がありません。
+                    </div>
+                )}
             </div>
         </DashBoardShell>
     );
