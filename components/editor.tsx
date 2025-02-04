@@ -10,8 +10,13 @@ import Header from '@editorjs/header';
 import LinkTool from '@editorjs/link';
 import List from '@editorjs/list';
 import Code from '@editorjs/code';
+import { Post } from "@prisma/client";
 
-export default function Editor() {
+interface EditorProps {
+    post: Pick<Post, "id" | "title" | "content" | "published">;
+}
+
+export default function Editor({post}: EditorProps) {
 
     const ref = useRef<EditorJS | undefined>(undefined);
     const [isMounted, setIsMounted] = useState(false);
@@ -67,6 +72,7 @@ export default function Editor() {
                     <TextareaAutosize
                         id="title"
                         autoFocus
+                        defaultValue={post.title}
                         placeholder="タイトル"
                         className="w-full resize-none overflow-hidden bg-transparent text-5xl focus:outline-none font-bold"
                     >
