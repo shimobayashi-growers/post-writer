@@ -5,7 +5,7 @@ import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import TextareaAutosize from "react-textarea-autosize";
 import EditorJS from '@editorjs/editorjs';
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Header from '@editorjs/header';
 import LinkTool from '@editorjs/link';
 import List from '@editorjs/list';
@@ -13,11 +13,15 @@ import Code from '@editorjs/code';
 
 export default function Editor() {
 
+    const ref = useRef<EditorJS | undefined>(undefined);
     const [isMounted, setIsMounted] = useState(false);
 
-    const initializeEditor = async() => {
+    const initializeEditor = useCallback( async() => {
         const editor = new EditorJS({
             holder: "editor",
+            onReady() {
+                ref.current = editor;
+            },
             placeholder: "記事を入力してください",
             inlineToolbar: true,
             tools: {
@@ -27,13 +31,18 @@ export default function Editor() {
                 code: Code,
             }
         });
-    };
+    }, []);
 
     useEffect(() => {
         if (typeof window !== "undefined") {
             initializeEditor();
         }
-    }, [isMounted]);
+
+        return () => {
+            ref.current?.destroy();
+            ref.current = undefined;
+        };
+    }, [isMounted, initializeEditor]);
 
     return (
         <form>
@@ -54,7 +63,7 @@ export default function Editor() {
                         保存
                     </button>
                 </div>
-                <div>
+                <div className="w-[800px] mx-auto">
                     <TextareaAutosize
                         id="title"
                         autoFocus
