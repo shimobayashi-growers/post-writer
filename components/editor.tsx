@@ -6,6 +6,10 @@ import { buttonVariants } from "./ui/button";
 import TextareaAutosize from "react-textarea-autosize";
 import EditorJS from '@editorjs/editorjs';
 import { useEffect, useState } from "react";
+import Header from '@editorjs/header';
+import LinkTool from '@editorjs/link';
+import List from '@editorjs/list';
+import Code from '@editorjs/code';
 
 export default function Editor() {
 
@@ -16,6 +20,12 @@ export default function Editor() {
             holder: "editor",
             placeholder: "記事を入力してください",
             inlineToolbar: true,
+            tools: {
+                header: Header,
+                linkTool: LinkTool,
+                list: List,
+                code: Code,
+            }
         });
     };
 

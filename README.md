@@ -185,3 +185,35 @@ https://editorjs.io/
 ```
 npm i @editorjs/editorjs --save
 ```
+
+tool で設定して使う場合は一つずつインストールする必要がある
+
+## Header
+
+```
+npm i @editorjs/header
+```
+
+（型宣言でエラーがでたら）
+
+```
+npm i --save-dev @types/editorjs__header
+```
+
+## Link embeds
+
+```
+npm i @editorjs/link
+```
+
+## List
+
+```
+npm i @editorjs/list
+```
+
+## code
+
+```
+npm i @editorjs/code
+```
