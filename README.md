@@ -176,3 +176,12 @@ https://www.npmjs.com/package/react-textarea-autosize
 ```
 npm i react-textarea-autosize
 ```
+
+# エディターの導入
+
+Editor.js
+https://editorjs.io/
+
+```
+npm i @editorjs/editorjs --save
+```

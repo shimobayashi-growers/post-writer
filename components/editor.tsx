@@ -4,8 +4,27 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import TextareaAutosize from "react-textarea-autosize";
+import EditorJS from '@editorjs/editorjs';
+import { useEffect, useState } from "react";
 
 export default function Editor() {
+
+    const [isMounted, setIsMounted] = useState(false);
+
+    const initializeEditor = async() => {
+        const editor = new EditorJS({
+            holder: "editor",
+            placeholder: "記事を入力してください",
+            inlineToolbar: true,
+        });
+    };
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            initializeEditor();
+        }
+    }, [isMounted]);
+
     return (
         <form>
             <div className="grid w-full gap-10">
