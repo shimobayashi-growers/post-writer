@@ -60,8 +60,14 @@ export default function Editor({post}: EditorProps) {
         resolver: zodResolver(postPatchSchema),
     });
 
+    const onSubmit = async (data: PostPatchSchemaType) => {
+        const blocks = await ref.current?.save();
+        console.log(data);
+        console.log(blocks);
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
             <div className="grid w-full gap-10">
                 <div className="flex w-full items-center justify-between">
                     <div className="flex items-center space-x-10">
@@ -86,6 +92,7 @@ export default function Editor({post}: EditorProps) {
                         defaultValue={post.title}
                         placeholder="タイトル"
                         className="w-full resize-none overflow-hidden bg-transparent text-5xl focus:outline-none font-bold"
+                        {...register("title")}
                     >
                     </TextareaAutosize>
                 </div>
