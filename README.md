@@ -168,3 +168,11 @@ npm install date-fns
 ```
 npm install zod
 ```
+
+# textarea の自動サイズ調整
+
+https://www.npmjs.com/package/react-textarea-autosize
+
+```
+npm i react-textarea-autosize
+```
