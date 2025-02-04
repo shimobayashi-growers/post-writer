@@ -13,6 +13,7 @@ import Code from '@editorjs/code';
 import { Post } from "@prisma/client";
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod";
+import { postPatchSchema, PostPatchSchemaType } from "@/lib/validations/post";
 
 interface EditorProps {
     post: Pick<Post, "id" | "title" | "content" | "published">;
@@ -51,9 +52,13 @@ export default function Editor({post}: EditorProps) {
         };
     }, [isMounted, initializeEditor]);
 
-    const {register, handleSubmit} = useForm({
-        resolver: zodResolver()
-    })
+    const {
+        register, 
+        handleSubmit,
+        formState: {errors},
+    } = useForm<PostPatchSchemaType>({
+        resolver: zodResolver(postPatchSchema),
+    });
 
     return (
         <form>
