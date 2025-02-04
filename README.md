@@ -217,3 +217,13 @@ npm i @editorjs/list
 ```
 npm i @editorjs/code
 ```
+
+# フォームの状態維持
+
+React Hook Form
+https://react-hook-form.com/
+
+```
+npm install react-hook-form
+npm i @hookform/resolvers
+```

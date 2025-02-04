@@ -11,6 +11,8 @@ import LinkTool from '@editorjs/link';
 import List from '@editorjs/list';
 import Code from '@editorjs/code';
 import { Post } from "@prisma/client";
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod";
 
 interface EditorProps {
     post: Pick<Post, "id" | "title" | "content" | "published">;
@@ -48,6 +50,10 @@ export default function Editor({post}: EditorProps) {
             ref.current = undefined;
         };
     }, [isMounted, initializeEditor]);
+
+    const {register, handleSubmit} = useForm({
+        resolver: zodResolver()
+    })
 
     return (
         <form>
